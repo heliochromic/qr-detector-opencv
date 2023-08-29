@@ -52,7 +52,7 @@ while cap.isOpened():
     cv2.putText(img, f"FPS: {int(fps)}", (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 0))
     cv2.imshow('img', img)
 
-    if cv2.waitKey(1) & 0xFF == 27:
+    if cv2.waitKey(10) & 0xFF == 27:
         break
 
 cap.release()
