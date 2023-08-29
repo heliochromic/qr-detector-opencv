@@ -11,7 +11,7 @@ detector = cv2.QRCodeDetector()
 last_decoded_text = ""
 link_opened = False
 link_opened_time = 0
-delay_between_links = 10  # Adjust this value to set the desired delay in seconds
+delay_between_links = 10 
 
 while cap.isOpened():
     success, img = cap.read()
@@ -37,9 +37,9 @@ while cap.isOpened():
 
     current_time = time.time()
     if len(decodedText) > 0 and not link_opened and (current_time - link_opened_time) > delay_between_links:
-        # Check if the browser process is running
+
         browser_processes = [proc.name() for proc in psutil.process_iter(attrs=['name'])]
-        browser_name = "chrome.exe"  # Change this to the name of the browser process on your system
+        browser_name = "chrome.exe"
         if browser_name in browser_processes:
             webbrowser.open(decodedText)
             link_opened = True
