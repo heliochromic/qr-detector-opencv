@@ -37,7 +37,6 @@ while cap.isOpened():
 
     current_time = time.time()
     if len(decodedText) > 0 and not link_opened and (current_time - link_opened_time) > delay_between_links:
-
         browser_processes = [proc.name() for proc in psutil.process_iter(attrs=['name'])]
         browser_name = "chrome.exe"
         if browser_name in browser_processes:
